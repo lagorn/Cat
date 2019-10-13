@@ -23,4 +23,9 @@ public class MortalManipulation {
         }
         System.out.println("Наш кот " + cat.getStatus());
     }
+    public MortalManipulation copyCat(Cat cat){
+        Cat cloneCat = new Cat();
+        MortalManipulation cloneCat1 = new MortalManipulation();
+        return cloneCat1;
+    }
 }
