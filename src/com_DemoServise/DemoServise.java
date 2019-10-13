@@ -12,5 +12,9 @@ public class DemoServise {
         MortalManipulation test_subject = new MortalManipulation();
         test_subject.overeatingCat(myrzik);
         test_subject.pullCat(myrzik);
+
+        Cat mashka = new Cat(5542.23);
+
+
     }
 }
