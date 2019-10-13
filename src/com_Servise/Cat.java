@@ -29,6 +29,19 @@ public class Cat
         maxWeight = MAX_WEIGTH;
         eatenFood = eatenFood;
     }
+    public Cat copyCat(Cat cat){
+        Cat cloneCat = new Cat();
+        cloneCat.setWeight(cat.getWeight());
+        return cloneCat;
+    }
+
+    public void setOriginWeight(double originWeight) {
+        this.originWeight = originWeight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
 
     public static int getCount() {
         return count;

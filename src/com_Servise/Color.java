@@ -5,5 +5,16 @@ public enum Color {
     Brown,
     Grey,
     Olive,
-    Magenta
+    Magenta;
+
+    private String colorCat;
+
+    public String getColorCat() {
+        return colorCat;
+    }
+
+    public void setColorCat(String colorCat) {
+        this.colorCat = colorCat;
+    }
 }
+
