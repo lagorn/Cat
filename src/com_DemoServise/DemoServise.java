@@ -19,5 +19,15 @@ public class DemoServise {
         System.out.println("Вес первой кошки " +  mashka.getWeight());
         Cat clonCat = mashka.copyCat(mashka);
         System.out.println("Вес второй кошки " + clonCat.getWeight());
+
+        System.out.println(myrka.getWeight());
+        myrka.feed(100.);
+        System.out.println(myrka.getEatenFood());
+        System.out.println(myrka.getWeight());
+        myrka.feed(200.);
+        System.out.println(myrka.getEatenFood());
+        System.out.println(myrka.getWeight());
+        myrka.setColorCat(Color.Olive);
+        System.out.println(myrka.getColorCat());
     }
 }

@@ -5,6 +5,7 @@ public class Cat
     private double originWeight;
     private double weight;
 
+    private Color colorCat;
     private double minWeight;
     private double maxWeight;
     private double eatenFood;
@@ -20,20 +21,22 @@ public class Cat
         minWeight = MIN_WEIGTH;
         maxWeight = MAX_WEIGTH;
         eatenFood = eatenFood;
+        count++;
     }
 
     public Cat (Double weight){
+        this();
         this.weight = weight;
-        originWeight = weight;
-        minWeight = MIN_WEIGTH;
-        maxWeight = MAX_WEIGTH;
-        eatenFood = eatenFood;
     }
     public Cat copyCat(Cat cat){
         Cat cloneCat = new Cat();
         cloneCat.setWeight(cat.getWeight());
+        cloneCat.setOriginWeight(cat.getOriginWeight());
+        cloneCat.setEatenFood(cat.getEatenFood());
+        cloneCat.setColorCat(cat.getColorCat());
         return cloneCat;
     }
+
 
     public void setOriginWeight(double originWeight) {
         this.originWeight = originWeight;
@@ -45,10 +48,6 @@ public class Cat
 
     public static int getCount() {
         return count;
-    }
-
-    public static void setCount(int count) {
-        Cat.count = count;
     }
 
     public double getEatenFood() {
@@ -67,7 +66,13 @@ public class Cat
 
     public void feed(Double amount)
     {
-        weight = weight + amount;
+        if(getWeight()> MIN_WEIGTH && getWeight() <MAX_WEIGTH){
+            weight = weight + amount;
+            setEatenFood(amount);
+        }
+        else {
+            System.out.println("Хватит кормить этого жирного ублюдка");
+        }
     }
 
     public void drink(Double amount)
@@ -100,9 +105,11 @@ public class Cat
     public String getStatus()
     {
         if(weight < minWeight) {
+            --count;
             return "Dead";
         }
         else if(weight > maxWeight) {
+            --count;
             return "Exploded";
         }
         else if(weight > originWeight) {
@@ -111,5 +118,13 @@ public class Cat
         else {
             return "Playing";
         }
+    }
+
+    public void setColorCat(Color color) {
+        colorCat = color;
+    }
+
+    public Color getColorCat() {
+        return colorCat;
     }
 }
