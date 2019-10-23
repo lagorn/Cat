@@ -73,6 +73,9 @@ public class Cat
         else {
             System.out.println("Хватит кормить этого жирного ублюдка");
         }
+        if(getWeight()<MIN_WEIGTH){
+            --count;
+        }
     }
 
     public void drink(Double amount)
@@ -105,11 +108,11 @@ public class Cat
     public String getStatus()
     {
         if(weight < minWeight) {
-            --count;
+
             return "Dead";
         }
         else if(weight > maxWeight) {
-            --count;
+
             return "Exploded";
         }
         else if(weight > originWeight) {
