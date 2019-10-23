@@ -73,7 +73,7 @@ public class Cat
         else {
             System.out.println("Хватит кормить этого жирного ублюдка");
         }
-        if(getWeight()<MIN_WEIGTH){
+        if((getWeight()<MIN_WEIGTH)||(getWeight()>MAX_WEIGTH)){
             --count;
         }
     }
